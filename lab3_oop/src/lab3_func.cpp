@@ -27,7 +27,7 @@ Square::Square(const Square& other) {
 
 Square::Square(Square&& other) noexcept {
     for (int i = 0; i < 4; i++) {
-        vertices[i] = other.vertices[i];
+        vertices[i] = std::move(other.vertices[i]);
     }
 }
 
@@ -43,7 +43,7 @@ Square& Square::operator=(const Square& other) {
 Square& Square::operator=(Square&& other) noexcept {
     if (this != &other) {
         for (int i = 0; i < 4; i++) {
-            vertices[i] = other.vertices[i];
+            vertices[i] = std::move(other.vertices[i]);
         }
     }
     return *this;
@@ -133,7 +133,7 @@ Rectangle::Rectangle(const Rectangle& other) {
 
 Rectangle::Rectangle(Rectangle&& other) noexcept {
     for (int i = 0; i < 4; i++) {
-        vertices[i] = other.vertices[i];
+        vertices[i] = std::move(other.vertices[i]);
     }
 }
 
@@ -149,7 +149,7 @@ Rectangle& Rectangle::operator=(const Rectangle& other) {
 Rectangle& Rectangle::operator=(Rectangle&& other) noexcept {
     if (this != &other) {
         for (int i = 0; i < 4; i++) {
-            vertices[i] = other.vertices[i];
+            vertices[i] = std::move(other.vertices[i]);
         }
     }
     return *this;
@@ -238,7 +238,7 @@ Trapezoid::Trapezoid(const Trapezoid& other) {
 
 Trapezoid::Trapezoid(Trapezoid&& other) noexcept {
     for (int i = 0; i < 4; i++) {
-        vertices[i] = other.vertices[i];
+        vertices[i] = std::move(other.vertices[i]);
     }
 }
 
@@ -254,7 +254,7 @@ Trapezoid& Trapezoid::operator=(const Trapezoid& other) {
 Trapezoid& Trapezoid::operator=(Trapezoid&& other) noexcept {
     if (this != &other) {
         for (int i = 0; i < 4; i++) {
-            vertices[i] = other.vertices[i];
+            vertices[i] = std::move(other.vertices[i]);
         }
     }
     return *this;
